@@ -1,0 +1,36 @@
+<!--
+  Generated template for the KitaplikPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Kitaplığın</ion-title>
+    <ion-buttons end>
+        <button (click)="logout()" ion-button>
+            <b><ion-icon name="log-out"></ion-icon></b>
+         </button>
+       </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h1>Devam Et...</h1>
+    <hr>
+    <ion-scroll scrollX="true" style="width: 100%; height: 230px">
+        <div class="inner">
+          <ion-card  (click)="kitapdetay(item.key)"  *ngFor="let item of items$ | async">
+            <img *ngIf="item.yer == 1" src="{{item.resimurl}}" style="width: 120px; height: 200px;" alt="">
+            <div class="progress-outer">
+                <div *ngIf="item.yer == 1" class="progress-inner" [style.width]="progress + '%'">
+                </div>
+            </div>
+          </ion-card>
+        </div>
+      </ion-scroll>
+
+</ion-content>

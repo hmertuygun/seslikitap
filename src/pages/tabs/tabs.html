@@ -1,5 +1,23 @@
-<ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+
+<ion-tabs tabsHideOnSubPages="true" class="tabs-icon-only" color="primary">
+    <ion-footer  style="border-bottom:1px solid #2e1f63; background-color: #488aff; text-align: center; margin-bottom:40px">
+        <ion-grid>
+            <ion-row>
+              <ion-col col-4>
+                  <b>{{playing}}</b>
+              </ion-col>
+              <ion-col col-4>
+                <b>{{dk}} : {{saniye}}</b>
+            </ion-col>
+              <ion-col style="text-align: right" col-4>
+                  <button *ngIf="!played" (click)="kitapbaslat()" icon-only><ion-icon name="play"></ion-icon></button>
+                  <button *ngIf="played" (click)="kitapdurdur()"icon-only><ion-icon name="pause"></ion-icon></button>
+              </ion-col>
+            </ion-row>  
+        </ion-grid>
+    </ion-footer>
+    <hr>
+  <ion-tab [root]="tab1Root" tabIcon="search"></ion-tab>
+  <ion-tab [root]="tab3Root" tabIcon="albums"></ion-tab>
 </ion-tabs>
+

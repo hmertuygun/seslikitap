@@ -1,7 +1,7 @@
-page-home {
+page-kitaplik {
     .inner{
-        width: 1500px;
-        height: 100%;
+        width: 2000px;
+        height: 10%;
         ion-card{
             display: table-cell;
             border-radius: 5px;
@@ -10,19 +10,16 @@ page-home {
                 width: 96%;
                 padding: 3px;
                 text-align: center;
-                background-color: #f4f4f4;
-                border: 1px solid #dcdcdc;
-                color: #fff;
-                border-radius: 20px;
+                border-radius: 2px;
             }
          
             .progress-inner {
-                min-width: 15%;
+                width: 1%;
                 white-space: nowrap;
                 overflow: hidden;
                 padding: 5px;
-                border-radius: 20px;
-                background-color: #16A1A4;
+                border-radius: 2px;
+                background-color: rgb(43, 22, 164);
             }
         }
        

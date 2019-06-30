@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sesli Kitap</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <form [formGroup]="todo" (ngSubmit)="register()">
+      <ion-item>
+        <ion-label>E-mail</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" formControlName="pass"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+    </form>
+    </ion-content>

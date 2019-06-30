@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar >
+    <ion-title>{{adi}}</ion-title>
+    <!--<ion-buttons end> <button (click)="favori()" style="font-size: 25px"> <ion-icon ios="ios-star-outline" md="md-star"></ion-icon></button> </ion-buttons>
+    --> </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ul>
+        <ion-list>
+            <ion-card>
+              <img src="{{resimurl}}" alt="">
+              <h1 > {{adi}}</h1>
+              <p > {{yazarr}}</p>
+              <p > {{orijinaladi}}</p>
+              <p > {{baskitarihi}}</p>
+              <p > {{hakkinda}}</p>
+              <p > {{yayinevi}}</p>
+            </ion-card>
+            <button (click)="kitapdinle()" ion-button round>Yükle</button>
+          </ion-list>
+  </ul>
+</ion-content>

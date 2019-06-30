@@ -1,0 +1,20 @@
+<ion-header>
+
+    <ion-navbar >
+      <ion-title>Kitap Dinle</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ul>
+          <ion-list>
+              <ion-card *ngFor="let iteem of items$ | async">
+                <h1 *ngIf=" iteem.key == id" > {{iteem.adi}}</h1>
+                <p *ngIf=" iteem.key == id" > {{iteem.yazar}}</p>
+              </ion-card>
+            </ion-list>
+    </ul>
+  </ion-content>
+  

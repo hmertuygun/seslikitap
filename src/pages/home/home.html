@@ -1,17 +1,44 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Sesli Kitap</ion-title>
+      <ion-searchbar [(ngModel)]="searchTerm" (click)="openSearch()" (ionCancel)="onCancel($event)" showCancelButton="true" (ionInput)="setFilteredItems($event)" placeholder="Bir Kitap Arayın" style="margin-top:8%"></ion-searchbar>
+      <ion-buttons end>
+       <!-- <button (click)="add()" ion-button>
+          <ion-icon name="add"></ion-icon>
+        </button>-->
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content  padding>
+    <div *ngIf="!isSearchbarActive">
+    <h1>Çok Okunanlar</h1>
+    <hr>
+    <ion-scroll scrollX="true" style="width: 100%; height: 230px">
+      <div class="inner">
+        <ion-card  (click)="kitapdetay(item.key)"  *ngFor="let item of items$ | async">
+          <img *ngIf="item.yer == 1" src="{{item.resimurl}}" style="width: 120px; height: 200px;" alt="">
+        </ion-card>
+      </div>
+    </ion-scroll>
+    <h1>Editörün Seçimi</h1>
+    <hr>
+    <ion-scroll scrollX="true" style="width: 100%; height: 200px">
+      <div class="inner">
+          <ion-card  (click)="kitapdetay(item.key)"  *ngFor="let item of items$ | async">
+              <img  *ngIf="item.yer == 2"  src="{{item.resimurl}}" style="width: 120px; height: 200px;" alt="">
+        </ion-card>
+      </div>
+    </ion-scroll>
+    <h1>Bugün Popüler</h1>
+    <hr>
+    <ion-scroll scrollX="true" style="width: 100%; height: 200px">
+      <div class="inner">
+          <ion-card  (click)="kitapdetay(item.key)"  *ngFor="let item of items$ | async">
+              <img  *ngIf="item.yer == 3"  src="{{item.resimurl}}" style="width: 120px; height: 200px;" alt="">
+        </ion-card>
+      </div>
+    </ion-scroll>
+    </div>
+  </ion-content>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>

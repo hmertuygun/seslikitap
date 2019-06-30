@@ -1,0 +1,30 @@
+<!--
+  Generated template for the AddBookPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>addBook</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-item>
+  <ion-input [(ngModel)]="item.adi" placeholder="Adı"></ion-input>
+</ion-item>
+<ion-item>
+    <ion-input [(ngModel)]="item.yazar" placeholder="Yazar"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-input [(ngModel)]="item.baskitarihi" placeholder="Baskı Tarihi"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input [(ngModel)]="item.prijinaladi" placeholder="Orijinal Adı"></ion-input>
+      </ion-item>
+      <button ion-button block clear (click)="addItem(item)">Add</button>
+      {{item | json}}
+</ion-content>
